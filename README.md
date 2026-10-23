@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sandap Softwares
 
-## Getting Started
+A world-class marketing site for **Sandap Softwares** — a custom software studio building systems for schools, hospitals, and businesses.
 
-First, run the development server:
+Built with Next.js 16 (App Router), React 19, Tailwind CSS 4, Motion, and Lucide.
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Edit contact details
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All contact details, the domain, and availability copy live in one file:
 
-## Learn More
+```text
+src/lib/site.ts
+```
 
-To learn more about Next.js, take a look at the following resources:
+Update `email`, `phone`, `phoneHref`, `domain`, and `availability`. The header, footer, contact page, CTA band, metadata, and structured data all read from there.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The current phone/email are placeholders — replace them before launch.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Pages
 
-## Deploy on Vercel
+- `/` — home, interactive product previews, solutions, concept work, process, principles
+- `/solutions/schools` — school operations
+- `/solutions/hospitals` — hospital management
+- `/solutions/businesses` — business operations
+- `/work` — three concept builds with detail pages
+- `/about` — studio story and principles
+- `/contact` — enquiry form and FAQ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Content for solutions and concept projects lives in `src/lib/data.ts`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact form
+
+The form posts to `src/app/api/contact/route.ts`.
+
+- **With `RESEND_API_KEY` set**, enquiries are emailed via Resend.
+- **Without it**, the form gracefully opens the visitor's email app with the message prefilled.
+
+Copy `.env.example` to `.env.local` and fill in the values:
+
+```bash
+cp .env.example .env.local
+```
+
+`CONTACT_FROM_EMAIL` must be a verified sender in Resend. For testing, Resend's `onboarding@resend.dev` sender works for the account owner.
+
+## Design system
+
+- **Palette** — paper `#f5f0e6`, ink `#14120f`, clay `#b4552b`, pine `#17342c`
+- **Type** — Inter Tight (UI), Instrument Serif (editorial italics), Geist Mono (labels)
+- **Logo** — the "Fit" mark: an S with a clay dot, inline SVG in `src/components/logo.tsx`
+- **Motion** — subtle reveals and tab transitions; respects `prefers-reduced-motion`
+
+## Build & deploy
+
+```bash
+npm run build
+npm run start
+```
+
+Deploy to Vercel and point `sandapsoftwares.com` at it. Set the environment variables from `.env.example` in the project settings if you want email delivery.
+
+## Notes
+
+- The three projects (Vidya, Arogya, Gati) are clearly labelled **concept builds**, not client engagements. Replace them with real case studies when available.
+- No fake testimonials, client logos, or metrics are used on the site.
+- The site ships with SEO metadata, Organization JSON-LD, sitemap, robots, and a generated Open Graph image.
