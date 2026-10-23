@@ -23,7 +23,7 @@ src/lib/site.ts
 
 Update `email`, `phone`, `phoneHref`, `domain`, and `availability`. The header, footer, contact page, CTA band, metadata, and structured data all read from there.
 
-The current phone/email are placeholders — replace them before launch.
+The current email is a placeholder — replace it before launch.
 
 ## Pages
 

@@ -3,8 +3,8 @@ export const siteConfig = {
   shortName: "Sandap",
   domain: "https://sandapsoftwares.com",
   email: "hello@sandapsoftwares.com",
-  phone: "+91 00000 00000",
-  phoneHref: "tel:+910000000000",
+  phone: "+91 91254 08283",
+  phoneHref: "tel:+919125408283",
   location: "India",
   description:
     "Sandap Softwares designs and builds custom software for schools, hospitals, and businesses — from admissions and billing to patient records and operations.",
