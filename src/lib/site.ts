@@ -5,7 +5,7 @@ export const siteConfig = {
   email: "hello@sandapsoftwares.com",
   phone: "+91 91254 08283",
   phoneHref: "tel:+919125408283",
-  location: "India",
+  location: "Varanasi, India",
   description:
     "Sandap Softwares designs and builds custom software for schools, hospitals, and businesses — from admissions and billing to patient records and operations.",
   availability: "Taking on new projects",

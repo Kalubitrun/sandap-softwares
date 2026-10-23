@@ -79,6 +79,12 @@ const organisationSchema = {
   email: siteConfig.email,
   telephone: siteConfig.phone,
   description: siteConfig.description,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Varanasi",
+    addressRegion: "Uttar Pradesh",
+    addressCountry: "IN",
+  },
   areaServed: { "@type": "Country", name: "India" },
   knowsAbout: [
     "School management software",
